@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="Runner"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.3", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_height=640
+window/size/viewport_width=1100
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
 
 [dotnet]
 
@@ -28,6 +32,14 @@ folder_colors={
 "res://Scene/": "purple",
 "res://Script/": "blue"
 }
+
+[global_group]
+
+Player=""
+
+[internationalization]
+
+locale/locale_filter_mode=1
 
 [rendering]
 

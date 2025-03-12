@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn86bi86ibjh0"]
+
+[ext_resource type="Script" path="res://Script/Player.cs" id="1_ijfp7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wyyte"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ps37"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wp8f8"]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(106, 304)
+scale = Vector2(4.52, 4.88)
+script = ExtResource("1_ijfp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(0, -6.7623)
+shape = SubResource("CapsuleShape2D_wyyte")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_6ps37")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+modulate = Color(0.626637, 0.0817286, 0.447488, 1)
+self_modulate = Color(0.627888, 0.269661, 0.428646, 1)
+position = Vector2(0.221236, 7.15256e-07)
+scale = Vector2(20.1327, 15.3689)
+mesh = SubResource("CapsuleMesh_wp8f8")
